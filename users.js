@@ -12,16 +12,3 @@ class User {
 
 let thomas = new User('Thomas', 'Falcone', 'thomas.falcone@mail.com');
 console.log(thomas.prenom);
-
-thomas.email = 'thomas.falcone@gmail.com';
-
-console.log(thomas.email);
-
-thomas = null;
-
-delete thomas.email;
-
-const ob = {
-  name: 'thomas'
-}
-delete ob.name;
