@@ -1,10 +1,15 @@
 class User{
   static last_id = 0;
 
-  constructor(prenom, nom, email){
+  id: string;
+  nom: string;
+  prenom: string;
+  email: string;
+
+  constructor(prenom: string, nom: string, email: string){
     User.last_id += 1;
 
-    this.id = User.last_id;
+    this.id = User.last_id.toString();
     this.nom = nom;
     this.prenom = prenom;
     this.email = email;
@@ -15,4 +20,4 @@ class User{
   }
 }
 
-module.exports = User;
+export = User;
