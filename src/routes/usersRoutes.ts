@@ -50,7 +50,7 @@ router.patch("/:userId", (req: Request, res: Response) => {
   const user = userController.findUser(userId);
 
   // pas de user
-  if(!user) { res.status(404).send("Utilisateur non trouvé") }
+  if(!user) { res.status(404).send("Utilisateur non trouvé"); return; }
   // pas d'info dans le body
   if(!prenom && !nom && !email) { res.status(400).send("Il me faut au moins un prenom, un nom ou un email") }
 
@@ -67,7 +67,7 @@ router.delete("/:userId", (req: Request, res: Response) => {
   const userId = req.params["userId"];
 
   const user = userController.findUser(userId);
-  if(!user) { res.status(404).send("Utilisateur non trouvé") }
+  if(!user) { res.status(404).send("Utilisateur non trouvé"); return; }
 
   userController.deleteUser(user);
 
