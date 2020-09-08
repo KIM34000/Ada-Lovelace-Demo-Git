@@ -3,8 +3,6 @@ import userController from '../controllers/users';
 const router = Router();
 
 router.get("/:userId", (req: Request, res: Response) => {
-  // http://localhost:3000/users/1
-
   const userId = req.params["userId"];
   console.log(`Le client veut les infos du user ${req.params["userId"]}`);
 
